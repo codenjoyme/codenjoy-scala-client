@@ -1,4 +1,4 @@
-package com.codenjoy.dojo.tetris.client
+package com.codenjoy.dojo.games.tetris.scala
 
 import com.codenjoy.dojo.games.tetris.Board
 

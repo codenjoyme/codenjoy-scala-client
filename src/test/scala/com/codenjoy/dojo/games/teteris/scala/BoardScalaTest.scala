@@ -1,4 +1,4 @@
-package com.codenjoy.dojo.tetris.client
+package com.codenjoy.dojo.games.teteris.scala
 
 /*-
  * #%L
@@ -22,9 +22,10 @@ package com.codenjoy.dojo.tetris.client
  * #L%
  */
 
+import com.codenjoy.dojo.games.tetris.scala.BoardScala
+import com.codenjoy.dojo.games.tetris.{Board, Element}
 import com.codenjoy.dojo.services.Point
 import com.codenjoy.dojo.services.PointImpl.pt
-import com.codenjoy.dojo.games.tetris.{Board, Element}
 import org.json.JSONObject
 import org.junit.Assert.assertEquals
 import org.junit.Test
