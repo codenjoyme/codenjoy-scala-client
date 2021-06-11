@@ -31,15 +31,15 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 
 object BoardScalaTest {
-  def getBoard(glass: String, figureType: String, point: Point, futureFigures: Array[String]): Board = {
+  def getBoard(glass: String, figureType: String, point: Point, futureFigures: Array[String]): BoardScala = {
     val result: JSONObject = Board.getJson(glass, figureType, point, futureFigures)
-    new BoardScala().forString(result.toString).asInstanceOf[Board]
+    new BoardScala().forString(result.toString).asInstanceOf[BoardScala]
   }
 }
 
 class BoardScalaTest {
   @Test def test() {
-    val board: Board = Board.getBoard(
+    val board: BoardScala = BoardScalaTest.getBoard(
       "......." +
       "......I" +
       "..LL..I" +
