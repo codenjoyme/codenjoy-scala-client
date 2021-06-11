@@ -22,7 +22,7 @@ package com.codenjoy.dojo.games.teteris.scala
  * #L%
  */
 
-import com.codenjoy.dojo.games.tetris.scala.YourSolverScala
+import com.codenjoy.dojo.games.tetris.YourSolverScala
 import com.codenjoy.dojo.services.PointImpl.pt
 import com.codenjoy.dojo.services.{Dice, Direction, Point}
 import org.junit.Assert.assertEquals

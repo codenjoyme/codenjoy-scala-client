@@ -22,8 +22,7 @@ package com.codenjoy.dojo.games.teteris.scala
  * #L%
  */
 
-import com.codenjoy.dojo.games.tetris.scala.BoardScala
-import com.codenjoy.dojo.games.tetris.{Board, Element}
+import com.codenjoy.dojo.games.tetris.{Board, BoardScala, Element}
 import com.codenjoy.dojo.services.Point
 import com.codenjoy.dojo.services.PointImpl.pt
 import org.json.JSONObject
