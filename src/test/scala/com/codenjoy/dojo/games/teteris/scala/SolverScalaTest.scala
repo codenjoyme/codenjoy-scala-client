@@ -1,4 +1,4 @@
-package com.codenjoy.dojo.tetris.client
+package com.codenjoy.dojo.games.teteris.scala
 
 /*-
  * #%L
@@ -22,8 +22,9 @@ package com.codenjoy.dojo.tetris.client
  * #L%
  */
 
-import com.codenjoy.dojo.services.{Dice, Direction, Point}
+import com.codenjoy.dojo.games.tetris.YourSolverScala
 import com.codenjoy.dojo.services.PointImpl.pt
+import com.codenjoy.dojo.services.{Dice, Direction, Point}
 import org.junit.Assert.assertEquals
 import org.junit.{Before, Test}
 import org.mockito.ArgumentMatchers.anyInt
