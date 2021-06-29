@@ -30,7 +30,7 @@ import org.junit.{Before, Test}
 import org.mockito.ArgumentMatchers.anyInt
 import org.mockito.Mockito.{mock, when}
 
-class SolverScalaTest {
+class YourSolverScalaTest {
   private var dice: Dice = null
   private var ai: YourSolverScala = null
 
