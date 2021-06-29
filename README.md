@@ -1,33 +1,36 @@
-For NonJava languages:
-- please go to .\src\main\<language>
-- chose your language
-- and follow README.md instructions
+This project represents a basic scala websocket client for the codenjoy platform.
+It allows you to easily and quickly join the game, developing your unique algorithm, having a configured infrastructure.
 
-For Java:
-- setup Java (JDK 11)
-    + setup JAVA_HOME variable
-- setup Maven3
-    + setup M2_HOME variable
-    + setup Path variable
-    + open cmd and run command 'mvn -version' it should print valid java and maven location
-- import this project as Maven project into Intellij Idea (Eclipse/ is not recommended)
-- please install Engine dependency
-    + on page http://server/codenjoy-contest/help
-        * you can download zip with dependency
-            - server = server_host_ip:8080 server ip inside your LAN
-            - server = codenjoy.com if you play on http://codenjoy.com/codenjoy-contest
-        * on this page you can also read game instructions
-- register your hero on server http://server/codenjoy-contest/register
-- in class .\src\main\java\com\codenjoy\dojo\<gamename>\client\YourSolver.java
-    + copy board page browser url from address bar and paste into main method
-    + implement logic inside method
-        * public String get(Board board) {
-    + run main method of YourSolver class
-    + on page http://server/codenjoy-contest/board/game/<gamename> you can check the leaderboard - your bot should move
-    + if something changed - restart the process
-        * warning! only one instance of YourSolver class you can run per player - please check this
-- in class .\src\main\java\com\codenjoy\dojo\<gamename>\client\Board.java
-    + you can add you own methods for work with board
-- in test package .\src\test\java\com\codenjoy\dojo\<gamename>\client
-    + you can write yor own test
-- Codenjoy!
+# What do you need to get started?
+To get started, you should define the desired game and enter a value in `com.codenjoy.dojo.RunnerScala.GAME`. \
+The second important thing is the connection token to the server. After successful authorization on the site, you must copy the url
+and enter a value in `com.codenjoy.dojo.RunnerScala.URL`. \
+This is enough to connect and participate in the competition.
+
+# How to run it?
+To start a project from the console window, you must first perform build with Maven `mvn clean package -Pjar-with-dependencies`.
+The entry point for starting a project is `com.codenjoy.dojo.RunnerScala.main(args)`. \
+You can pass the game type and token connection to the server as command-line arguments.
+Game parameters passed by arguments at startup have a higher priority than those defined in the code.
+
+The archive is run with the command `java -jar target/scala-client-exec.jar [<game>] [<url>]`
+
+# How does it work?
+The elements on the map are defined in `com.codenjoy.dojo.games.<gamename>.Element`. They determine the meaning of a particular symbol.
+The two important components of the game are the `com.codenjoy.dojo.games.<gamename>.BoardScala` game board
+and the `com.codenjoy.dojo.games.<gamename>.YourSolverScala` solver.
+
+Every second the server sends a string representation of the current state of the board, which is parsed in an object of class `Board`.
+Then the server expects a string representation of your bot's action that is computed by executing `YourSolverScala.get(board)`.
+
+Using the set of available methods of the `Board` class, you improve the algorithm of the bot's behavior.
+You should develop this class, extending it with new methods that will be your tool in the fight.
+For example, a bot can get information about an element in a specific coordinate by calling `AbstractBoard.getAt(x, y)`
+or count the number of elements of a certain type near the coordinate by calling `AbstractBoard.countNear(x, y, element)`, etc.
+
+# Business logic testing
+Writing tests will allow you to create conclusive evidence of the correctness of the existing code.
+This is your faithful friend, who is always ready to answer the question: "Is everything working as I expect? The new code did not break my existing logic?". \
+The `com.codenjoy.dojo.client.<gamename>.BoardScalaTest` class contains a set of tests that check board tools.
+Implementation of new methods should be accompanied by writing new tests and checking the results of processing existing ones. \
+Use `com.codenjoy.dojo.games.<gamename>.YourSolverScalaTest.should()` to check the bot's behavior for a specific game scenario.
