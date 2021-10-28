@@ -3,8 +3,11 @@ package com.codenjoy.dojo
 import com.codenjoy.dojo.client.WebSocketRunner
 import com.codenjoy.dojo.client.runner.ReflectLoader.{loadScalaBoard, loadScalaSolver}
 
-object RunnerScala { // Select your game
-  var GAME = "clifford"
+object RunnerScala {
+
+  // Select your game
+  var GAME = "mollymage"
+
   // Paste here board page url from browser after registration,
   // or put it as command line parameter.
   var URL = "http://localhost:8080/codenjoy-contest/board/player/0?code=000000000000"

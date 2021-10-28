@@ -1,20 +1,19 @@
 package com.codenjoy.dojo.games.tetris
 
-import com.codenjoy.dojo.client.AbstractJsonSolver
+import com.codenjoy.dojo.client.Solver
 import com.codenjoy.dojo.client.runner.Language
 import com.codenjoy.dojo.services.{Dice, Direction}
 
-/**
- * User: your name
- * Это твой алгоритм AI для игры. Реализуй его на свое усмотрение.
- * Обрати внимание на {@see SolverScalaTest} - там приготовлен тестовый
- * фреймворк для тебя.
- */
 @Language("scala")
-class YourSolverScala(var dice: Dice) extends AbstractJsonSolver[BoardScala] {
+class YourSolverScala(var dice: Dice) extends Solver[BoardScala] {
+  private var board: BoardScala = _
 
-  override def getAnswer(board: BoardScala): String = {
+  override def get(board: BoardScala): String = {
+    this.board = board
+    if (board.isGameOver) return ""
+
     // TODO your code here
+
     Direction.DOWN.toString
   }
 }
