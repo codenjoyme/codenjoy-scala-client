@@ -6,7 +6,7 @@
 
 
     <groupId>com.codenjoy</groupId>
-    <artifactId>scala-client</artifactId>
+    <artifactId>client-scala</artifactId>
     <version>1.1.1</version>
 
     <properties>
@@ -57,7 +57,7 @@
                             <archive>
                                 <manifest>
                                     <addClasspath>false</addClasspath>
-                                    <mainClass>com.codenjoy.dojo.RunnerScala</mainClass>
+                                    <mainClass>com.codenjoy.dojo.ScalaRunner</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>

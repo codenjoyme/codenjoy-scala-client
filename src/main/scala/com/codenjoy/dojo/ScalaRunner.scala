@@ -3,7 +3,7 @@ package com.codenjoy.dojo
 import com.codenjoy.dojo.client.WebSocketRunner
 import com.codenjoy.dojo.client.runner.ReflectLoader.{loadScalaBoard, loadScalaSolver}
 
-object RunnerScala {
+object ScalaRunner {
 
   // Select your game
   var GAME = "mollymage"

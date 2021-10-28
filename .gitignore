@@ -1,5 +1,11 @@
-.idea
+.idea/
 *.iml
-target
+target/
+.mvn/repository/
+.jdk
+.tools/*.zip
+/**/pitest/
+*.jar
 
+# macOS
 .DS_Store
